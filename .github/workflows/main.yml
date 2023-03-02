@@ -34,7 +34,7 @@ jobs:
       run: |
         podman run docker.io/library/ubuntu:latest /usr/bin/perl -e"printf \"Hello Word from Perl\";"
 
-    - name: Run perl file
+    - name: Make a file available to a container
       run: |
         podman run --mount=type=bind,source=test.pl,destination=/var/test.pl docker.io/library/ubuntu:latest /usr/bin/ls -la /var
 
