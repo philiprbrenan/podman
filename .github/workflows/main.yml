@@ -22,3 +22,7 @@ jobs:
       run: |
         podman run docker.io/library/ubuntu:latest /bin/echo "Hello World"
 
+    - name: Run the comamnd again without the initial download
+      run: |
+        podman run docker.io/library/ubuntu:latest /bin/echo "Hello World2"
+
