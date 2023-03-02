@@ -14,11 +14,11 @@ jobs:
       with:
         ref: 'main'
 
-    - name: Install podman
+    - name: Install_podman
       run: |
         sudo apt-get install podman
         
-    - name: Run a command
+    - name: Run_command
       run: |
         podman run docker.io/library/ubuntu:latest /bin/echo "Hello World"
 
