@@ -1,4 +1,4 @@
-# Test $d
+# Say "hello world" using podman
 
 name: Test
 
@@ -14,55 +14,6 @@ jobs:
       with:
         ref: 'main'
 
-    - name: Sde
+    - name: podman
       run: |
-        wget -q -O sde.tar.xz https://downloadmirror.intel.com/751535/sde-external-9.14.0-2022-10-25-lin.tar.xz
-        tar -xf sde.tar.xz
-        mv sde-external*lin/ sde
-    - name: 2d
-      run: |
-        gcc -I. 2d/2d.c -lm;      ./a.out
-    - name: Array
-      run: |
-        gcc -I. array/long.c;     ./a.out
-        gcc -I. array/void.c;     ./a.out
-    - name: Basics
-      run: |
-        gcc -I. basics/basics.c;  ./a.out
-    - name: BinarySearch
-      run: |
-        gcc -I. binarySearch/long.c; ./a.out
-    - name: Bits
-      run: |
-        gcc -I. bits/bits.c;      ./a.out
-    - name: Hash
-      run: |
-        gcc -I. hash/int.c;       ./a.out
-    - name: HeapSortLong
-      run: |
-        gcc -I. heapSort/long.c      -mavx512f; sde/sde64 -mix -- ./a.out
-    - name: InsertionSort
-      run: |
-        gcc -I. insertionSort/long.c -mavx512f; sde/sde64 -mix -- ./a.out
-    - name: MergeSortLong
-      run: |
-        gcc -I. mergeSort/long.c     -mavx512f; sde/sde64 -mix -- ./a.out
-    - name: Modulo
-      run: |
-        gcc -I. modulo/modulo.c;  ./a.out
-    - name: NWayTreeLong
-      run: |
-        gcc -I. nWayTree/long.c;  ./a.out
-    - name: QuickSortLong
-      run: |
-        gcc -I. quickSort/long.c     -mavx512f; sde/sde64 -mix -- ./a.out
-    - name: Simd
-      run: |
-        #gcc -I. simd/test.c         -mavx512f; sde/sde64 -mix -- ./a.out
-        #cat sde-mix-out.txt
-    - name: StackLong
-      run: |
-        gcc -I. stack/long.c;     ./a.out
-    - name: Tree
-      run: |
-        gcc -I. tree/tree.c;      ./a.out
+        apt-get install podman
