@@ -26,11 +26,19 @@ jobs:
       run: |
         podman run docker.io/library/ubuntu:latest /bin/echo "Hello World2"
 
-    - name: See installed ccommands
+    - name: See installed commands
       run: |
         podman run docker.io/library/ubuntu:latest /bin/ls -la /usr/bin
 
     - name: Run perl
       run: |
         podman run docker.io/library/ubuntu:latest /usr/bin/perl -e"printf \"Hello Word from Perl\";"
+
+    - name: Run perl file
+      run: |
+        podman run docker.io/library/ubuntu:latest /usr/bin/perl <<END
+        use v5.34;
+        say "Hello World from Perl again"
+        END
+        
 
