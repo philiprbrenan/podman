@@ -16,9 +16,11 @@ jobs:
 
     - name: Install_podman
       run: |
+        true      
         sudo apt-get install podman
         
     - name: Run_command
       run: |
+        true     
         podman run docker.io/library/ubuntu:latest /bin/echo "Hello World"
 
