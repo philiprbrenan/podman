@@ -36,9 +36,10 @@ jobs:
 
     - name: Run perl file
       run: |
-        podman run docker.io/library/ubuntu:latest /usr/bin/perl <<END
-        use v5.34;
-        say "Hello World from Perl again"
-        END
+        podman run --mount=type=bind,source=test.pl,destination=/var/test.pl docker.io/library/ubuntu:latest /usr/bin/ls -la /var
+
+    - name: Run perl file
+      run: |
+        podman run --mount=type=bind,source=test.pl,destination=/var/test.pl docker.io/library/ubuntu:latest /usr/bin/perl /var/test.pl
         
 
