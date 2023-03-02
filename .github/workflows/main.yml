@@ -22,7 +22,15 @@ jobs:
       run: |
         podman run docker.io/library/ubuntu:latest /bin/echo "Hello World"
 
-    - name: Run the comamnd again without the initial download
+    - name: Run the command again without the initial download
       run: |
         podman run docker.io/library/ubuntu:latest /bin/echo "Hello World2"
+
+    - name: See installed ccommands
+      run: |
+        podman run docker.io/library/ubuntu:latest /bin/ls -la /usr/bin
+
+    - name: Run perl
+      run: |
+        podman run docker.io/library/ubuntu:latest /usr/bin/perl -e"printf \"Hello Word from Perl\";"
 
