@@ -16,4 +16,4 @@ jobs:
 
     - name: podman
       run: |
-        apt-get install podman
+        sudo apt-get install podman
